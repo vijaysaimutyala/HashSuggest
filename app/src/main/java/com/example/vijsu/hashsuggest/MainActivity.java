@@ -44,16 +44,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public int findTokenStart(CharSequence text, int cursor) {
                 int i = cursor;
-
                 while (i > 0 && text.charAt(i - 1) != '#') {
                     i--;
                 }
-
-                //Check if token really started with @, else we don't have a valid token
+                //Check if token really started with #, else we don't have a valid token
                 if (i < 1 || text.charAt(i - 1) != '#') {
                     return cursor;
                 }
-
                 return i;
             }
 
@@ -61,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
             public int findTokenEnd(CharSequence text, int cursor) {
                 int i = cursor;
                 int len = text.length();
-
                 while (i < len) {
                     if (text.charAt(i) == ' ') {
                         return i;
@@ -69,18 +65,15 @@ public class MainActivity extends AppCompatActivity {
                         i++;
                     }
                 }
-
                 return len;
             }
 
             @Override
             public CharSequence terminateToken(CharSequence text) {
                 int i = text.length();
-
                 while (i > 0 && text.charAt(i - 1) == ' ') {
                     i--;
                 }
-
                 if (i > 0 && text.charAt(i - 1) == ' ') {
                     return text;
                 } else {

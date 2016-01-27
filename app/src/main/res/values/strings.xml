@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HashSuggest</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="suggest">
+        <item>guntur</item>
+        <item>gudur</item>
+        <item>nellore</item>
+        <item>narasaraopet</item>
+    </string-array>
+</resources>
